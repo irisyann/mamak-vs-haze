@@ -11,13 +11,14 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mamak vs Haze">
 <meta property="og:description" content="Can you keep your customers drinking teh tarik while fighting off haze? A mamak stall survival game.">
-<meta property="og:image" content="og-image.png">
+<meta property="og:url" content="https://irisyann.github.io/mamak-vs-haze/">
+<meta property="og:image" content="https://irisyann.github.io/mamak-vs-haze/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mamak vs Haze">
 <meta name="twitter:description" content="Can you keep your customers drinking teh tarik while fighting off haze? A mamak stall survival game.">
-<meta name="twitter:image" content="og-image.png">
+<meta name="twitter:image" content="https://irisyann.github.io/mamak-vs-haze/og-image.png">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Courier+Prime:wght@400;700&family=Figtree:wght@400;600;800&display=swap">
@@ -254,6 +255,8 @@ button:focus-visible{outline:3px solid var(--tube);outline-offset:3px}
 .menu .filt .buy{font-size:13px;padding:3px 7px}
 #shopOv .card{gap:12px;padding-block:16px}
 .go{font-family:var(--display)}
+.go.alt{background:transparent;border:2px solid var(--yel);color:var(--yel);box-shadow:none;padding-block:11px}
+#shareTxt{width:100%;font-family:var(--mono);font-size:13px;line-height:1.4;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--paperInk);resize:none}
 h1,h1 span,h2,.banner b,.till b,.tray b,.efan span,.stat b,.wallet b,.buy,.go,.tm-tab,.tin b,.menu-h,.menu .item h3,.stamp{text-transform:uppercase;letter-spacing:.03em}
 .signhead h1{font-size:46px;line-height:.95}
 .menu .item h3{font-size:16px}
@@ -355,6 +358,8 @@ h1,h1 span,h2,.banner b,.till b,.tray b,.efan span,.stat b,.wallet b,.buy,.go,.t
       <div class="stamp big" id="overT"></div>
     </div></div>
     <button class="go" id="again" data-i="again"></button>
+    <button class="go alt" id="copyRes" data-i="copyBtn"></button>
+    <textarea id="shareTxt" readonly rows="4" hidden aria-label="Result to copy"></textarea>
     <div class="best" id="best2"></div>
   </div>
 </div>
@@ -423,7 +428,7 @@ const L={
   t1:"Packed night, boss",
   t2:"Not bad, boss",
   t3:"Phew, made it",
-  lost:"The haze won :(",apiK:"API",rcBill:"BILL",rcTotal:"TOTAL",rcThanks:"Thank you, come again!",rcFinal:"FINAL BILL",shopH:"Stall upgrades",rcWage:"HELPER WAGES",o0:"Lorong legend",
+  lost:"The haze won :(",copyBtn:"Copy result",copied:"Copied!",share:(n,o,rm,a)=>`Mamak vs Haze\nI kept my mamak open for ${n} night${n===1?'':'s'}, served ${o} orders and earned RM${rm}. Worst API: ${a}.\nCan you last longer? https://irisyann.github.io/mamak-vs-haze/`,apiK:"API",rcBill:"BILL",rcTotal:"TOTAL",rcThanks:"Thank you, come again!",rcFinal:"FINAL BILL",shopH:"Stall upgrades",rcWage:"HELPER WAGES",o0:"Lorong legend",
   o1:"The haze won this time",
   o2:"The regulars will be back",
   o3:"Too hazy tonight",
@@ -494,7 +499,7 @@ const L={
   t1:"Ramai gila malam ni, boss",
   t2:"Boleh tahan, boss",
   t3:"Fuh, lepas jugak",
-  lost:"Jerebu menang :(",apiK:"IPU",rcBill:"BIL",rcTotal:"JUMLAH",rcThanks:"Terima kasih, sila datang lagi!",rcFinal:"BIL AKHIR",shopH:"Barang kedai",rcWage:"GAJI PEMBANTU",o0:"Legenda lorong",
+  lost:"Jerebu menang :(",copyBtn:"Salin keputusan",copied:"Dah disalin!",share:(n,o,rm,a)=>`Mamak vs Haze\nKedai aku bertahan ${n} malam, ${o} pesanan, untung RM${rm}. IPU paling teruk: ${a}.\nBoleh lawan? https://irisyann.github.io/mamak-vs-haze/`,apiK:"IPU",rcBill:"BIL",rcTotal:"JUMLAH",rcThanks:"Terima kasih, sila datang lagi!",rcFinal:"BIL AKHIR",shopH:"Barang kedai",rcWage:"GAJI PEMBANTU",o0:"Legenda lorong",
   o1:"Kali ni jerebu menang",
   o2:"Pelanggan tetap akan datang balik",
   o3:"Jerebu teruk sangat",
@@ -1118,7 +1123,12 @@ function renderShop(){
     box.appendChild(row);
   }
 }
+$('copyRes').addEventListener('click',()=>{const b=$('copyRes'),ta=$('shareTxt'),txt=T('share')(night-1,soldTotal,Math.round(earnedTotal),Math.round(peak));
+  const done=()=>{SFX.tick();b.textContent=T('copied');clearTimeout(b._t);b._t=setTimeout(()=>{b.textContent=T('copyBtn');},2000);};
+  const fallback=()=>{ta.value=txt;ta.hidden=false;ta.focus();ta.select();try{if(document.execCommand('copy'))done();}catch(e){}};
+  try{navigator.clipboard.writeText(txt).then(done,fallback);}catch(e){fallback();}});
 function gameOver(){
+  $('shareTxt').hidden=true;$('copyRes').textContent=T('copyBtn');
   state='over';pointers.clear();ambStop();
   $('sNights').textContent=night-1;$('sSold').textContent=soldTotal;$('sRm').textContent='RM'+Math.round(earnedTotal);$('sApi').textContent=Math.round(peak);
   $('overT').textContent=overTitle();
