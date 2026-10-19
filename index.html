@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Mamak vs Jerebu</title>
+<title>Mamak vs Haze</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Figtree:wght@400;600;800&display=swap">
@@ -121,6 +121,18 @@ h2{font-family:var(--display);font-weight:400;font-size:15px;margin:0;color:var(
 .go:active,.buy:active{transform:translateY(3px);box-shadow:none}
 button:focus-visible{outline:3px solid var(--tube);outline-offset:3px}
 .best{font-size:13px;color:var(--muted);text-align:center}
+#shopOv .card{gap:10px;padding-block:16px}
+#shopOv h1{font-size:22px}
+#shopOv .stats{grid-template-columns:repeat(4,1fr);gap:5px}
+#shopOv .stat{padding:5px 6px;text-align:center}
+#shopOv .stat small{font-size:8.5px;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#shopOv .stat b{font-size:14px}
+#shopOv .wallet{padding-top:8px}
+#shopOv .wallet b{font-size:22px}
+#shopOv .shop{position:relative;max-height:min(380px,52vh)}
+#shopOv .new{animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{50%{opacity:.55}}
+@media (prefers-reduced-motion:reduce){#shopOv .new{animation:none}}
 .tm{position:fixed;z-index:30;left:max(10px,env(safe-area-inset-left,0px));top:calc(env(safe-area-inset-top,0px) + 70px);font-family:var(--body);font-size:12px;max-width:calc(100% - 20px)}
 .tm-tab{font-family:var(--display);font-size:11px;background:#7b2cbf;color:#fff;border:0;border-radius:8px;padding:5px 9px;cursor:pointer}
 .tm-body{margin-top:6px;background:rgba(18,14,28,.94);border:1px solid #7b2cbf;border-radius:12px;padding:10px;display:grid;gap:7px;width:270px;max-width:100%}
@@ -182,7 +194,7 @@ button:focus-visible{outline:3px solid var(--tube);outline-offset:3px}
 <div class="ov" id="start">
   <div class="card">
     <div class="top"><div class="eyebrow">Restoran Maju Jaya 24 jam</div><div class="langs" role="group" aria-label="Language"><button data-l="en">EN</button><button data-l="ms">BM</button></div></div>
-    <h1 id="title">Mamak <span>vs Jerebu</span></h1>
+    <h1 id="title">Mamak <span>vs Haze</span></h1>
     <p data-i="lead"></p>
     <ul class="how">
       <li><span class="dot" style="background:var(--tube)"></span><span data-i="h1"></span></li>
@@ -241,7 +253,7 @@ button:focus-visible{outline:3px solid var(--tube);outline-offset:3px}
 const $=id=>document.getElementById(id);
 const cv=$('cv'),ctx=cv.getContext('2d');
 const bg=document.createElement('canvas'),bx=bg.getContext('2d');
-const NIGHT=30,TS=90/30,MAXW=5,TH=1.1,PRICE=2,ROTI=3,WAGE=30;
+let NIGHT=30;const TS=90/30,MAXW=5,TH=1.1,PRICE=2,ROTI=3,WAGE=30;
 const SHOP=[
   {id:'efan',name:'Kipas elektrik',desc:'Stronger gusts, no arm strain. Recharges when flat.',prices:[30],from:1},
   {id:'staff',name:'Hire a helper',desc:'Fans the haziest table. RM50 a night, quits if unpaid.',prices:[30,30],from:2},
@@ -326,7 +338,7 @@ const L={
   best:n=>n>1?`Best so far: ${n} nights`:`Best so far: ${n} night`,
   cough:["cough!","cough cough","*cough*"],
   bands:["Good","Moderate","Unhealthy","Very unhealthy","Hazardous"],
-  items:{efan:["Electric fan","Way stronger than your hand. Needs recharging."],staff:["Hire a helper","Fans the haziest table. RM30 wages per night."],mask:["Face masks","5 in a box. Drag one onto customer."],purif:["Air purifier","Cleans the air at one table."],roti:["Roti canai","Sells for RM3. Takes a while to finish."],filter:["Purifier filter","Filters get dirty after 2 nights. Swap them here."],sign:["No smoking sign","Drag it onto a smoker to make him stop."],tv:["Football TV","People stay calmer when there's a match on."],cat:["Shop cat","Cat visits, patience goes up."]}},
+  items:{efan:["Electric fan","Way stronger than your hand. Needs recharging."],staff:["Hire a helper","Fans the haziest table. RM30 wages per night."],mask:["Face masks","5 in a box. Drag one onto customer."],purif:["Air purifier","Cleans the air at one table."],roti:["Roti canai","Sells for RM3. Takes a while to finish."],filter:["Purifier filter","Filters get dirty after 2 nights. Swap them here."],sign:["No smoking sign","Drag it onto a smoker to make him stop."],tv:["Football TV","People stay calmer when there's a match on."],cat:["Oyen","Cat visits, patience goes up."]}},
  ms:{lead:"Jerebu datang lagi. Jaga meja, nanti pelanggan lari.",
   h1:"<b>Leret</b> untuk kipas.",
   h2:"<b>Tangan cepat penat</b>. Rehat jap.",
@@ -397,7 +409,7 @@ const L={
   best:n=>n>1?`Rekod paling lama: ${n} malam`:`Rekod paling lama: ${n} malam`,
   cough:["uhuk!","uhuk uhuk","*batuk*"],
   bands:["Baik","Sederhana","Tidak sihat","Sangat tidak sihat","Berbahaya"],
-  items:{efan:["Kipas elektrik","Lagi kuat dari tangan. Cas sendiri bila habis."],staff:["Ambil pembantu","Kipas meja paling berjerebu. Gaji RM30 semalam."],mask:["Pelitup muka","5 sekotak. Seret ke pelanggan."],purif:["Penulen udara","Bersihkan udara kat satu meja."],roti:["Roti canai","Jual RM3. Lama sikit nak habis."],filter:["Penapis","Penapis kotor lepas 2 malam. Tukar kat sini."],sign:["Papan dilarang merokok","Seret ke perokok supaya dia berhenti."],tv:["TV bola","Pelanggan lebih sabar bila ada bola."],cat:["Kucing kedai","Kucing datang, sabar bertambah."]}}
+  items:{efan:["Kipas elektrik","Lagi kuat dari tangan. Cas sendiri bila habis."],staff:["Ambil pembantu","Kipas meja paling berjerebu. Gaji RM30 semalam."],mask:["Pelitup muka","5 sekotak. Seret ke pelanggan."],purif:["Penulen udara","Bersihkan udara kat satu meja."],roti:["Roti canai","Jual RM3. Lama sikit nak habis."],filter:["Penapis","Penapis kotor lepas 2 malam. Tukar kat sini."],sign:["Papan dilarang merokok","Seret ke perokok supaya dia berhenti."],tv:["TV bola","Pelanggan lebih sabar bila ada bola."],cat:["Oyen","Kucing datang, sabar bertambah."]}}
 };
 const T=k=>L[lang][k];
 let W,H,DPR,S,topH,roofH;
@@ -904,6 +916,7 @@ function shopText(){
 function itemHead(it,extra){const [nm,ds]=T('items')[it.id];return `<div><h3>${nm}${extra||''}${night-1===it.from?`<span class="new">${T('nu')}</span>`:''}</h3><p>${ds}${it.repeat?T('have')(masks):''}</p></div>`;}
 
 function startNight(){
+  NIGHT=night<=2?20:30;
   state='play';drag=null;armed=null;signCd=0;nightT=0;spawnAcc=0;waveT=14/TS;floats=[];soldNight=0;tonight=0;walk=0;api=20;
   parts=parts.slice(0,20);stam=stamMax();tired=false;batt=100;setEfan(!!up.efan);fireT=0;
   tables.forEach((t,i)=>{t.cust=null;t.respawn=.4+i*.8;});
@@ -929,7 +942,7 @@ function endNight(){
   if(night>=7)purifs.forEach((o,i)=>{if(o)filt[i]=Math.max(0,filt[i]-1);});
   night++;
   if(!TM.on&&night-1>best){best=night-1;try{localStorage.setItem('ttj-best-nights',String(best))}catch(e){}}
-  shopText();renderShop();$('banner').hidden=true;$('shopOv').hidden=false;
+  shopText();renderShop();scrollToNew();$('banner').hidden=true;$('shopOv').hidden=false;
 }
 function purifRow(it,box){const row=document.createElement('div');row.className='item';const n=purifs.filter(Boolean).length,p=[60,90,130,180][Math.min(3,n)];
   row.innerHTML=itemHead(it);
@@ -951,6 +964,9 @@ function filterRow(it,box){const row=document.createElement('div');row.className
     else{b.textContent='RM'+p;b.disabled=wallet<p;b.addEventListener('click',()=>{if(wallet<p)return;wallet-=p;filt[i]=2;SFX.buy();renderShop();hud();});}
     r.appendChild(b);wrap.appendChild(r);});
   row.appendChild(wrap);box.appendChild(row);}
+function scrollToNew(){requestAnimationFrame(()=>{const box=$('shop'),tag=box.querySelector('.new');
+  if(!tag){box.scrollTop=0;return;}const it=tag.closest('.item');it.classList.add('fresh');
+  const top=it.offsetTop-8;try{box.scrollTo({top,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}catch(e){box.scrollTop=top;}});}
 function renderShop(){
   $('shWallet').textContent='RM'+Math.round(wallet);
   const box=$('shop');box.innerHTML='';
@@ -993,7 +1009,7 @@ $('tmGo').addEventListener('click',()=>{const n=Math.max(1,Math.min(30,parseInt(
   night=n;if(n>7&&!smokerNight){smokerNight=7;SHOP.find(i=>i.id==='sign').from=TM.unlock?0:7;}
   state='shop';pointers.clear();drag=null;armed=null;sum={n:n-1,walk:0,sold:0,quit:[]};
   ['shSold','shWalk'].forEach(id=>$(id).textContent='0');$('shRm').textContent='RM0';$('shWage').textContent='RM0';$('shWage').classList.remove('neg');
-  ['start','over','smokeOv'].forEach(id=>$(id).hidden=true);$('banner').hidden=true;shopText();renderShop();$('shopOv').hidden=false;hud();tmSync();});
+  ['start','over','smokeOv'].forEach(id=>$(id).hidden=true);$('banner').hidden=true;shopText();renderShop();$('shopOv').hidden=false;scrollToNew();hud();tmSync();});
 document.querySelectorAll('[data-rm]').forEach(b=>b.addEventListener('click',()=>{tmEnsureRun();wallet+=+b.dataset.rm;hud();if(state==='shop')renderShop();}));
 $('tmMasks').addEventListener('click',()=>{tmEnsureRun();masks+=10;everMask=true;hud();if(state==='shop')renderShop();});
 $('tmEnd').addEventListener('click',()=>{if(state==='intro'){$('smokeOv').hidden=true;state='play';}if(state==='play'){endNight();tmSync();}});
