@@ -1,5 +1,6 @@
 [
   { "id": "efan",   "prices": [30],              "from": 1 },
+  { "id": "grip",   "prices": [20, 35, 55],      "from": 3 },
   { "id": "staff",  "prices": [30, 30],          "from": 2 },
   { "id": "mask",   "prices": [10],              "from": 3, "repeat": true, "qty": 5 },
   { "id": "purif",  "prices": [60, 90, 130, 180], "from": 4 },

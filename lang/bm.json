@@ -38,6 +38,7 @@
   "battS": "BAT",
   "on": "ON",
   "chg": "CAS",
+  "off": "PADAM",
   "drag": "SERET",
   "blowGo": "TIUP",
 
@@ -47,6 +48,10 @@
   "spots": "titik panas",
   "wind": "Angin dah tukar",
   "easing": "Jerebu kurang sikit",
+  "blackout": "Blackout!",
+  "blackoutS": "Elektrik terputus. Tangan je yang boleh kipas.",
+  "power": "Elektrik dah ada",
+  "powerS": "Mesin hidup semula",
   "signHintT": "Seret papan tu ke sana",
   "signHintS": "Letak atas perokok tu",
 
@@ -80,6 +85,7 @@
 
   "items": {
     "efan":   { "name": "Kipas elektrik",         "desc": "Lagi kuat dari tangan tapi perlukan masa untuk dicas." },
+    "grip":   { "name": ["Tangan besi Tahap 1", "Tangan besi Tahap 2", "Tangan besi Tahap 3"], "desc": ["Kipas 30% lebih lama dan pulih 40% lebih cepat.", "Kipas 60% lebih lama dan pulih 80% lebih cepat.", "Kipas 90% lebih lama dan pulih 120% lebih cepat."] },
     "staff":  { "name": "Ambil pembantu",         "desc": "Berjalan sekeliling mengipas meja. Gaji RM30 semalam." },
     "mask":   { "name": "Pelitup muka",           "desc": "5 sekotak. Seret satu ke pelanggan untuk perlindungan tambahan sementara." },
     "purif":  { "name": "Penulen udara",          "desc": "Bersihkan udara di satu meja." },

@@ -172,14 +172,14 @@
       .banner {
         position: fixed;
         left: 50%;
-        transform: translateX(-50%);
-        top: calc(env(safe-area-inset-top, 0px) + 64px);
+        transform: translate(-50%, -50%);
+        top: 50%;
         z-index: 6;
         width: min(360px, calc(100% - 32px));
         background: rgba(60, 28, 12, 0.9);
         border: 1px solid var(--fire);
         border-radius: 12px;
-        padding: 8px 12px;
+        padding: 12px 16px;
         text-align: center;
         pointer-events: none;
       }
@@ -187,12 +187,12 @@
         display: block;
         font-family: var(--display);
         font-weight: 400;
-        font-size: 13px;
+        font-size: 17px;
         color: var(--fire);
         letter-spacing: 0.02em;
       }
       .banner span {
-        font-size: 12px;
+        font-size: 13px;
         color: var(--ink);
       }
       .banner.fire {
@@ -1582,7 +1582,8 @@
         </div>
         <div class="tm-row">
           <button id="tmEnd">End night</button><button id="tmFire">Fire now</button
-          ><button id="tmSmoke">Smoker now</button>
+          ><button id="tmSmoke">Smoker now</button
+          ><button id="tmBlack">Blackout now</button>
         </div>
         <div class="tm-row">
           <span>Speed</span><button data-sp="1">1x</button><button data-sp="2">2x</button
@@ -1774,6 +1775,9 @@
           efanOn = false,
           fireT = 0,
           fires = [],
+          blackT = 0,
+          blackDur = 0,
+          blackouts = [],
           bannerT = 0;
         const pointers = new Map();
         let best = 0;
@@ -1983,7 +1987,7 @@
         updSnd();
 
         const stamMax = () => 100 + 30 * up.grip,
-          regen = () => 24 + 9 * up.grip;
+          regen = () => 24 * (1 + 0.4 * up.grip);
         const battIdle = () => 2.5,
           battSwipe = () => 0.045,
           battCharge = () => 9;
@@ -2043,6 +2047,10 @@
             t.x = W * pos[i][0];
             t.y = topH + (H - topH) * pos[i][1];
           });
+          // centre the banner in the gap between table rows (below the row when wide)
+          $("banner").style.top =
+            (wide ? (tables[0].y + 40 * S + H - 80) / 2 : (tables[0].y + tables[2].y) / 2 - 20 * S) +
+            "px";
           drawBG();
         }
 
@@ -2395,13 +2403,18 @@
             ty + th / 2,
             tw,
           );
-          g.addColorStop(0, "rgba(120,230,150,.22)");
+          g.addColorStop(0, blackT > 0 ? "rgba(120,230,150,0)" : "rgba(120,230,150,.22)");
           g.addColorStop(1, "rgba(120,230,150,0)");
           ctx.fillStyle = g;
           ctx.fillRect(tx - tw / 2, ty - th, tw * 2, th * 3);
           ctx.fillStyle = "#0d1011";
           rr(ctx, tx - 3 * s, ty - 3 * s, tw + 6 * s, th + 6 * s, 3 * s);
           ctx.fill();
+          if (blackT > 0) {
+            ctx.fillStyle = "#181c1d";
+            ctx.fillRect(tx, ty, tw, th);
+            return;
+          }
           ctx.save();
           ctx.beginPath();
           ctx.rect(tx, ty, tw, th);
@@ -2700,8 +2713,9 @@
         function drawPurifier(i) {
           const p = purPos(i),
             s = S,
-            ok = filt[i] > 0;
-          if (ok)
+            ok = filt[i] > 0,
+            pow = blackT <= 0;
+          if (ok && pow)
             for (let j = 0; j < 2; j++) {
               const q = (clock * 0.5 + j / 2) % 1;
               ctx.strokeStyle = `rgba(150,215,255,${q * 0.35})`;
@@ -2725,7 +2739,7 @@
             ctx.lineTo(p.x + 6 * s, p.y - 18 * s + i * 3 * s);
             ctx.stroke();
           }
-          ctx.fillStyle = ok ? "#5fb8ff" : Math.sin(clock * 6) > 0 ? "#ef5b4c" : "#5a2a26";
+          ctx.fillStyle = !pow ? "#3a4144" : ok ? "#5fb8ff" : Math.sin(clock * 6) > 0 ? "#ef5b4c" : "#5a2a26";
           ctx.beginPath();
           ctx.arc(p.x, p.y + 2 * s, 1.8 * s, 0, 7);
           ctx.fill();
@@ -2835,7 +2849,7 @@
             nightT += dt;
             let rate = Math.min(28, 2.6 + (night - 1) * 1.3 + nightT * TS * (0.05 + 0.02 * night));
             for (const f of fires) {
-              if (!f.done && nightT >= f.at) {
+              if (!f.done && nightT >= f.at && blackT <= 0) {
                 f.done = true;
                 fireT = f.dur;
                 SFX.fire();
@@ -2848,6 +2862,22 @@
               if (fireT <= 0) {
                 fireT = 0;
                 banner(T("wind"), T("easing"), "info", 2);
+              }
+            }
+            for (const b of blackouts) {
+              if (!b.done && nightT >= b.at && fireT <= 0) {
+                b.done = true;
+                blackT = blackDur = b.dur;
+                SFX.flat();
+                banner(T("blackout"), T("blackoutS"), "fire", b.dur);
+              }
+            }
+            if (blackT > 0) {
+              blackT -= dt;
+              if (blackT <= 0) {
+                blackT = 0;
+                SFX.ready();
+                banner(T("power"), T("powerS"), "info", 2);
               }
             }
             spawnAcc += rate * dt;
@@ -2870,7 +2900,9 @@
               stam = Math.min(stamMax(), stam + regen() * dt);
               if (tired && stam >= stamMax() * 0.35) tired = false;
             }
-            if (up.efan) {
+            if (up.efan && blackT > 0) {
+              if (efanOn) setEfan(false);
+            } else if (up.efan) {
               if (efanOn) {
                 batt -= battIdle() * dt;
                 if (batt <= 0) {
@@ -2897,7 +2929,7 @@
           const k = Math.exp(-1.7 * dt),
             M = 140 * S,
             purs =
-              state === "play"
+              state === "play" && blackT <= 0
                 ? purifs.map((o, i) => (o && filt[i] > 0 ? purPos(i) : null)).filter(Boolean)
                 : [],
             PR = 125 * S;
@@ -3004,7 +3036,7 @@
                   dt *
                   (c.smoker ? 0.5 : 1) *
                   (c.mask > 0 ? 0.5 : 1) *
-                  (up.tv ? 0.6 : 1);
+                  (up.tv && blackT <= 0 ? 0.6 : 1);
                 c.coughT -= dt;
                 if (c.coughT <= 0 && !c.smoker) {
                   c.coughT = rnd(1.1, 2.5);
@@ -3480,6 +3512,10 @@
             ctx.fillStyle = fireT > 0 ? `rgba(170,110,60,${tint})` : `rgba(170,148,96,${tint})`;
             ctx.fillRect(0, 0, W, H);
           }
+          if (blackT > 0 && !((blackT > blackDur - 0.6 || blackT < 0.6) && Math.random() < 0.4)) {
+            ctx.fillStyle = "rgba(8,10,18,.42)";
+            ctx.fillRect(0, 0, W, H);
+          }
           ctx.lineCap = "round";
           for (const tr of trails) {
             const q = 1 - tr.t / 0.35,
@@ -3666,7 +3702,9 @@
             ef.hidden = false;
             ef.style.setProperty("--b", (batt / 100).toFixed(3));
             ef.classList.toggle("charging", !efanOn);
-            const tx = efanOn
+            const tx = blackT > 0
+              ? T("efan") + "<br>" + T("off")
+              : efanOn
               ? T("efan") + "<br>" + T("on")
               : T("chg") + "<br>" + Math.floor(batt) + "%";
             if (tx !== lastEf) {
@@ -3753,7 +3791,11 @@
           $("next").textContent = F("openN", { n: night });
         }
         function itemHead(it, extra) {
-          const { name: nm, desc: ds } = T("items")[it.id];
+          let { name: nm, desc: ds } = T("items")[it.id];
+          // per-level names/descs: show the next level to buy, or the last when maxed
+          const lv = (a) => (Array.isArray(a) ? a[Math.min(up[it.id] || 0, a.length - 1)] : a);
+          nm = lv(nm);
+          ds = lv(ds);
           return `<div><h3>${nm}${extra || ""}${night - 1 === it.from ? `<span class="new">${T("nu")}</span>` : ""}</h3><p>${ds}${it.repeat ? F("have", { n: masks }) : ""}</p></div>`;
         }
 
@@ -3796,6 +3838,10 @@
               spots: Math.round(rnd(120, 300) + night * 40),
               done: false,
             });
+          blackT = 0;
+          blackouts = [];
+          if (night === 8 || (night > 8 && Math.random() < Math.min(0.6, 0.3 + 0.04 * (night - 9))))
+            blackouts.push({ at: rnd(5, NIGHT - 10), dur: rnd(5, 7.5), done: false });
           staff = [];
           for (let i = 0; i < up.staff; i++)
             staff.push({
@@ -4216,6 +4262,9 @@
               spots: Math.round(rnd(120, 300) + night * 40),
               done: false,
             });
+        });
+        $("tmBlack").addEventListener("click", () => {
+          if (state === "play") blackouts.push({ at: nightT, dur: rnd(5, 7.5), done: false });
         });
         $("tmSmoke").addEventListener("click", () => {
           if (state !== "play") return;

@@ -40,6 +40,7 @@
   "chg": "CHG",
   "drag": "DRAG",
   "blowGo": "BLAST",
+  "off": "OFF",
 
   "swipe": "Start fanning",
   "worse": "Haze is worse tonight",
@@ -47,6 +48,10 @@
   "spots": "hotspots",
   "wind": "Wind changed",
   "easing": "Haze clearing a bit",
+  "blackout": "Blackout!",
+  "blackoutS": "Power tripped. Only your hand can fan now.",
+  "power": "Power's back",
+  "powerS": "Machines restarting",
   "signHintT": "Drag the sign over",
   "signHintS": "Drop it on the smoker",
 
@@ -80,6 +85,7 @@
 
   "items": {
     "efan":   { "name": "Electric fan",     "desc": "Stronger than your hand but needs time to recharge." },
+    "grip":   { "name": ["Iron arm Level 1", "Iron arm Level 2", "Iron arm Level 3"], "desc": ["Fan 30% longer and recover 40% faster.", "Fan 60% longer and recover 80% faster.", "Fan 90% longer and recover 120% faster."] },
     "staff":  { "name": "Hire a helper",    "desc": "Walks around fanning tables. You pay RM30 wages per night." },
     "mask":   { "name": "Face masks",       "desc": "5 in a box. Drag one onto customer for temp extra protection." },
     "purif":  { "name": "Air purifier",     "desc": "Cleans the air at one table." },
