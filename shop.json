@@ -7,5 +7,6 @@
   { "id": "filter", "prices": [15],              "from": 7 },
   { "id": "sign",   "prices": [25],              "from": 99 },
   { "id": "cat",    "prices": [80],              "from": 9 },
-  { "id": "tv",     "prices": [200],             "from": 6 }
+  { "id": "tv",     "prices": [200],             "from": 6 },
+  { "id": "blower", "prices": [30],              "from": 10 }
 ]

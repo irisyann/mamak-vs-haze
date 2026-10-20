@@ -9,6 +9,7 @@
   "ariaSound": "Bunyi",
   "ariaMasks": "Pelitup muka",
   "ariaSign": "Papan dilarang merokok",
+  "ariaBlow": "Angin dalam tin",
   "ariaEfan": "Bateri kipas elektrik",
   "ariaLang": "Bahasa",
   "ariaShare": "Keputusan untuk disalin",
@@ -38,6 +39,7 @@
   "on": "ON",
   "chg": "CAS",
   "drag": "SERET",
+  "blowGo": "TIUP",
 
   "swipe": "Mula kipas",
   "worse": "Jerebu makin teruk malam ni",
@@ -53,6 +55,7 @@
   "smokerQuit": "Cis!",
   "dead": "Bateri habis!",
   "masked": "Pakai pelitup!",
+  "blown": "WUSSH!",
   "out": "Padam rokok!",
 
   "smEye": "Eh, hati-hati",
@@ -84,7 +87,8 @@
     "filter": { "name": "Penapis",                "desc": "Penapis jadi kotor selepas 2 malam dan perlu diganti." },
     "sign":   { "name": "Papan dilarang merokok", "desc": "Seret ke perokok supaya dia berhenti." },
     "tv":     { "name": "TV bola",                "desc": "Orang lebih tenang bila ada perlawanan bola." },
-    "cat":    { "name": "Oyen",                   "desc": "Bila Oyen duduk dengan pelanggan, mereka duduk lebih lama." }
+    "cat":    { "name": "Oyen",                   "desc": "Bila Oyen duduk dengan pelanggan, mereka duduk lebih lama." },
+    "blower": { "name": "Angin dalam tin",   "desc": "Satu tiupan kuat hilangkan semua jerebu. Sekali guna sahaja, simpan untuk saat genting." }
   },
   "have": " Ada {n}.",
   "nu": "BARU",

@@ -9,6 +9,7 @@
   "ariaSound": "Sound",
   "ariaMasks": "Face masks",
   "ariaSign": "No-smoking sign",
+  "ariaBlow": "Wind in a can",
   "ariaEfan": "Electric fan battery",
   "ariaLang": "Language",
   "ariaShare": "Result to copy",
@@ -38,6 +39,7 @@
   "on": "ON",
   "chg": "CHG",
   "drag": "DRAG",
+  "blowGo": "BLAST",
 
   "swipe": "Start fanning",
   "worse": "Haze is worse tonight",
@@ -53,6 +55,7 @@
   "smokerQuit": "Ugh!",
   "dead": "Battery flat!",
   "masked": "Masked!",
+  "blown": "WHOOSH!",
   "out": "Put it out!",
 
   "smEye": "Eh, careful",
@@ -84,7 +87,8 @@
     "filter": { "name": "Purifier filter",  "desc": "Filters get dirty after 2 nights and needs replacement." },
     "sign":   { "name": "No smoking sign",  "desc": "Drag it onto a smoker to make him stop." },
     "tv":     { "name": "Football TV",      "desc": "People stay calmer when there's a match on." },
-    "cat":    { "name": "Oyen",             "desc": "When Oyen sits with a customer, they stay longer." }
+    "cat":    { "name": "Oyen",             "desc": "When Oyen sits with a customer, they stay longer." },
+    "blower": { "name": "Wind in a can",     "desc": "One giant blast clears all the haze. Single use, so save it for a bad moment." }
   },
   "have": " You have {n}.",
   "nu": "NEW",
