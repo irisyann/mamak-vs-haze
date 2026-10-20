@@ -88,7 +88,7 @@
     "sign":   { "name": "Papan dilarang merokok", "desc": "Seret ke perokok supaya dia berhenti." },
     "tv":     { "name": "TV bola",                "desc": "Orang lebih tenang bila ada perlawanan bola." },
     "cat":    { "name": "Oyen",                   "desc": "Bila Oyen duduk dengan pelanggan, mereka duduk lebih lama." },
-    "blower": { "name": "Angin dalam tin",   "desc": "Satu tiupan kuat hilangkan semua jerebu. Sekali guna sahaja, simpan untuk saat genting." }
+    "blower": { "name": "Angin dalam tin",   "desc": "Satu tiupan kuat hilangkan semua jerebu." }
   },
   "have": " Ada {n}.",
   "nu": "BARU",

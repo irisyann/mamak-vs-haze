@@ -88,7 +88,7 @@
     "sign":   { "name": "No smoking sign",  "desc": "Drag it onto a smoker to make him stop." },
     "tv":     { "name": "Football TV",      "desc": "People stay calmer when there's a match on." },
     "cat":    { "name": "Oyen",             "desc": "When Oyen sits with a customer, they stay longer." },
-    "blower": { "name": "Wind in a can",     "desc": "One giant blast clears all the haze. Single use, so save it for a bad moment." }
+    "blower": { "name": "Wind in a can",     "desc": "One giant blast clears all the haze." }
   },
   "have": " You have {n}.",
   "nu": "NEW",
