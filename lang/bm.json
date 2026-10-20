@@ -13,11 +13,11 @@
   "ariaLang": "Bahasa",
   "ariaShare": "Keputusan untuk disalin",
 
-  "lead": "Jerebu datang lagi. Jaga meja, nanti pelanggan lari.",
+  "lead": "Pelanggan terus minum teh tarik sambil lawan jerebu.",
   "h1": "<b>Leret</b> untuk kipas.",
-  "h2": "<b>Tangan cepat penat</b>. Rehat jap.",
-  "h3": "<b>Kebakaran</b> di Sumatera, jerebu makin tebal.",
-  "h4": "<b>5 orang lari</b>, kedai tutup.",
+  "h2": "<b>Tangan kau cepat penat</b> dan kena rehat sekejap.",
+  "h3": "<b>Kebakaran</b> banyak, jerebu makin tebal.",
+  "h4": "<b>Kalau 5 pelanggan lari,</b> kedai tutup.",
   "open": "Buka kedai",
   "best": { "one": "Rekod paling lama: {n} malam", "other": "Rekod paling lama: {n} malam" },
 
@@ -45,8 +45,8 @@
   "spots": "titik panas",
   "wind": "Angin dah tukar",
   "easing": "Jerebu kurang sikit",
-  "signHintT": "Seret papan tanda",
-  "signHintS": "Letak kat perokok",
+  "signHintT": "Seret papan tu ke sana",
+  "signHintS": "Letak atas perokok tu",
 
   "cough": ["uhuk!", "uhuk uhuk", "*batuk*"],
   "quitF": "Tak tahan!",
@@ -57,7 +57,7 @@
 
   "smEye": "Eh, hati-hati",
   "smT": "Ada orang hisap rokok",
-  "smP": "Kipas asap dia. Bagi pelitup bila dia berhenti.",
+  "smP": "Perokok menambah teruk jerebu. Kipaskan asap, pastu pakaikan dia pelitup supaya dia tak merokok lagi.",
   "ok": "OK",
 
   "done": "Malam {n} habis",
@@ -66,7 +66,7 @@
   "rcWage": "GAJI PEMBANTU",
   "rcTotal": "JUMLAH",
   "walkouts": "Lari",
-  "quit": { "one": "Pembantu berhenti. Gaji tak cukup.", "other": "{n} pembantu berhenti. Gaji tak cukup." },
+  "quit": { "one": "Pembantu berhenti. Kau tak mampu bayar gaji dia :(", "other": "{n} pembantu berhenti. Kau tak mampu bayar gaji diorang :(" },
   "t0": "Bagus!",
   "t1": "Ramai gila malam ni, boss",
   "t2": "Boleh tahan, boss",
@@ -76,15 +76,15 @@
   "openN": "Buka malam {n}",
 
   "items": {
-    "efan":   { "name": "Kipas elektrik",         "desc": "Lagi kuat dari tangan. Cas sendiri bila habis." },
-    "staff":  { "name": "Ambil pembantu",         "desc": "Kipas meja paling berjerebu. Gaji RM30 semalam." },
-    "mask":   { "name": "Pelitup muka",           "desc": "5 sekotak. Seret ke pelanggan." },
-    "purif":  { "name": "Penulen udara",          "desc": "Bersihkan udara kat satu meja." },
+    "efan":   { "name": "Kipas elektrik",         "desc": "Lagi kuat dari tangan tapi perlukan masa untuk dicas." },
+    "staff":  { "name": "Ambil pembantu",         "desc": "Berjalan sekeliling mengipas meja. Gaji RM30 semalam." },
+    "mask":   { "name": "Pelitup muka",           "desc": "5 sekotak. Seret satu ke pelanggan untuk perlindungan tambahan sementara." },
+    "purif":  { "name": "Penulen udara",          "desc": "Bersihkan udara di satu meja." },
     "roti":   { "name": "Roti canai",             "desc": "Jual RM3. Lama sikit nak habis." },
-    "filter": { "name": "Penapis",                "desc": "Penapis kotor lepas 2 malam. Tukar kat sini." },
+    "filter": { "name": "Penapis",                "desc": "Penapis jadi kotor selepas 2 malam dan perlu diganti." },
     "sign":   { "name": "Papan dilarang merokok", "desc": "Seret ke perokok supaya dia berhenti." },
-    "tv":     { "name": "TV bola",                "desc": "Pelanggan lebih sabar bila ada bola." },
-    "cat":    { "name": "Oyen",                   "desc": "Kucing datang, sabar bertambah." }
+    "tv":     { "name": "TV bola",                "desc": "Orang lebih tenang bila ada perlawanan bola." },
+    "cat":    { "name": "Oyen",                   "desc": "Bila Oyen duduk dengan pelanggan, mereka duduk lebih lama." }
   },
   "have": " Ada {n}.",
   "nu": "BARU",

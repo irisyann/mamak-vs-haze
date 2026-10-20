@@ -15,9 +15,9 @@
 
   "lead": "Can you keep your customers drinking teh tarik while fighting off haze?",
   "h1": "<b>Swipe</b> to fan.",
-  "h2": "Your <b>arm gets tired</b>. Give it a break.",
-  "h3": "<b>Fires</b> in Sumatra mean thicker haze.",
-  "h4": "<b>5 walkouts</b> and you shut down.",
+  "h2": "Your <b>arm gets tired</b> easily and needs to take breaks.",
+  "h3": "<b>More fires</b> mean thicker haze.",
+  "h4": "<b>If 5 customers walkout,</b> you shut down.",
   "open": "Open up",
   "best": { "one": "Best so far: {n} night", "other": "Best so far: {n} nights" },
 
@@ -57,7 +57,7 @@
 
   "smEye": "Eh, careful",
   "smT": "Smoker at the table",
-  "smP": "Extra smoke. Fan it, or mask him after.",
+  "smP": "Smokers worsen the haze. Fan it away and mask him after to stop him from lighting up again.",
   "ok": "OK",
 
   "done": "Night {n} done",
@@ -66,7 +66,7 @@
   "rcWage": "HELPER WAGES",
   "rcTotal": "TOTAL",
   "walkouts": "Walkouts",
-  "quit": { "one": "Your helper quit. You couldn't pay him.", "other": "{n} helpers quit. You couldn't pay them." },
+  "quit": { "one": "Your helper quit. You couldn't pay him :(", "other": "{n} helpers quit. You couldn't pay them :(" },
   "t0": "Well done!",
   "t1": "Packed night, boss",
   "t2": "Not bad, boss",
@@ -76,15 +76,15 @@
   "openN": "Open night {n}",
 
   "items": {
-    "efan":   { "name": "Electric fan",     "desc": "Way stronger than your hand. Needs recharging." },
-    "staff":  { "name": "Hire a helper",    "desc": "Fans the haziest table. RM30 wages per night." },
-    "mask":   { "name": "Face masks",       "desc": "5 in a box. Drag one onto customer." },
+    "efan":   { "name": "Electric fan",     "desc": "Stronger than your hand but needs time to recharge." },
+    "staff":  { "name": "Hire a helper",    "desc": "Walks around fanning tables. You pay RM30 wages per night." },
+    "mask":   { "name": "Face masks",       "desc": "5 in a box. Drag one onto customer for temp extra protection." },
     "purif":  { "name": "Air purifier",     "desc": "Cleans the air at one table." },
     "roti":   { "name": "Roti canai",       "desc": "Sells for RM3. Takes a while to finish." },
-    "filter": { "name": "Purifier filter",  "desc": "Filters get dirty after 2 nights. Swap them here." },
+    "filter": { "name": "Purifier filter",  "desc": "Filters get dirty after 2 nights and needs replacement." },
     "sign":   { "name": "No smoking sign",  "desc": "Drag it onto a smoker to make him stop." },
     "tv":     { "name": "Football TV",      "desc": "People stay calmer when there's a match on." },
-    "cat":    { "name": "Oyen",             "desc": "Cat visits, patience goes up." }
+    "cat":    { "name": "Oyen",             "desc": "When Oyen sits with a customer, they stay longer." }
   },
   "have": " You have {n}.",
   "nu": "NEW",
