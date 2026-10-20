@@ -266,20 +266,20 @@ h1,h1 span,h2,.banner b,.till b,.tray b,.efan span,.stat b,.wallet b,.buy,.go,.t
 <body>
 
 
-<canvas id="cv" aria-label="Mamak stall game area"></canvas>
+<canvas id="cv" data-ia="ariaCanvas"></canvas>
 
 <div class="hud">
-  <div class="api chip" id="apiBox"><div class="api-row"><span class="api-k" data-i="apiK">API</span><b id="apiV">20</b></div><span id="apiL">Baik</span></div>
-  <div class="till chip"><b id="rm">RM0</b><span id="clk">NIGHT 1</span></div>
-  <div class="stools chip" id="stools" aria-label="Walkouts left tonight"></div>
+  <div class="api chip" id="apiBox"><div class="api-row"><span class="api-k" data-i="apiK"></span><b id="apiV">20</b></div><span id="apiL"></span></div>
+  <div class="till chip"><b id="rm">RM0</b><span id="clk"></span></div>
+  <div class="stools chip" id="stools" data-ia="ariaStools"></div>
 </div>
 <div class="banner" id="banner" hidden><b id="banT"></b><span id="banS"></span></div>
 <div class="dock">
-  <button class="snd chip" id="snd" aria-pressed="true" aria-label="Sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path class="x" d="M16 9l5 6M21 9l-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-  <div class="arm chip" id="arm"><div class="lbl"><span id="armN">TANGAN</span><em id="armS">SEGAR</em></div><div class="bar"><i id="armBar"></i></div></div>
-  <button class="tray chip" id="tray" hidden aria-label="Face masks"><svg viewBox="0 0 32 20" aria-hidden="true"><path d="M3 6 Q1 10 3 14 M29 6 Q31 10 29 14" stroke="#9fc6d6" stroke-width="1.6" fill="none"/><rect x="5" y="3" width="22" height="14" rx="5" fill="#bfe3f2"/><path d="M8 8h16M8 12h16" stroke="#8fb9cc" stroke-width="1.2"/></svg><b id="maskN">×0</b></button>
-  <button class="tray chip" id="signTray" hidden aria-label="No-smoking sign"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#f4f1ea" stroke="#d63a2c" stroke-width="2.6"/><rect x="5.5" y="10.6" width="11" height="2.8" fill="#555"/><rect x="16.5" y="10.6" width="2" height="2.8" fill="#f08a3c"/><path d="M5 5l14 14" stroke="#d63a2c" stroke-width="2.6"/></svg><b id="signN">✓</b></button>
-  <div class="efan" id="efan" hidden role="status" aria-pressed="false" aria-label="Electric fan battery"><i class="bolt"></i><span id="efanT">E-FAN<br>ON</span></div>
+  <button class="snd chip" id="snd" aria-pressed="true" data-ia="ariaSound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path class="x" d="M16 9l5 6M21 9l-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <div class="arm chip" id="arm"><div class="lbl"><span id="armN"></span><em id="armS"></em></div><div class="bar"><i id="armBar"></i></div></div>
+  <button class="tray chip" id="tray" hidden data-ia="ariaMasks"><svg viewBox="0 0 32 20" aria-hidden="true"><path d="M3 6 Q1 10 3 14 M29 6 Q31 10 29 14" stroke="#9fc6d6" stroke-width="1.6" fill="none"/><rect x="5" y="3" width="22" height="14" rx="5" fill="#bfe3f2"/><path d="M8 8h16M8 12h16" stroke="#8fb9cc" stroke-width="1.2"/></svg><b id="maskN">×0</b></button>
+  <button class="tray chip" id="signTray" hidden data-ia="ariaSign"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#f4f1ea" stroke="#d63a2c" stroke-width="2.6"/><rect x="5.5" y="10.6" width="11" height="2.8" fill="#555"/><rect x="16.5" y="10.6" width="2" height="2.8" fill="#f08a3c"/><path d="M5 5l14 14" stroke="#d63a2c" stroke-width="2.6"/></svg><b id="signN">✓</b></button>
+  <div class="efan" id="efan" hidden role="status" aria-pressed="false" data-ia="ariaEfan"><i class="bolt"></i><span id="efanT"></span></div>
 </div>
 
 <div class="tm" id="tm" hidden>
@@ -297,8 +297,8 @@ h1,h1 span,h2,.banner b,.till b,.tray b,.efan span,.stat b,.wallet b,.buy,.go,.t
 <div class="ov" id="start">
   <div class="card board">
    <div class="signhead"><span class="peel" aria-hidden="true"></span>
-    <div class="top"><div class="eyebrow">Restoran Maju Jaya 24 jam</div><div class="langs" role="group" aria-label="Language"><button data-l="en">EN</button><button data-l="ms">BM</button></div></div>
-    <h1 id="title">Mamak <span>vs Haze</span></h1>
+    <div class="top"><div class="eyebrow" data-i="eyebrow"></div><div class="langs" role="group" data-ia="ariaLang"><button data-l="en">EN</button><button data-l="ms">BM</button></div></div>
+    <h1 id="title" data-i="title"></h1>
    </div>
    <div class="board-body">
     <p data-i="lead"></p>
@@ -316,9 +316,9 @@ h1,h1 span,h2,.banner b,.till b,.tray b,.efan span,.stat b,.wallet b,.buy,.go,.t
 
 <div class="ov" id="shopOv" hidden>
   <div class="card">
-    <div class="top"><div class="eyebrow" id="shEye"></div><div class="langs" role="group" aria-label="Language"><button data-l="en">EN</button><button data-l="ms">BM</button></div></div>
+    <div class="top"><div class="eyebrow" id="shEye"></div><div class="langs" role="group" data-ia="ariaLang"><button data-l="en">EN</button><button data-l="ms">BM</button></div></div>
     <div class="rc-wrap"><div class="receipt">
-      <div class="rc-head">RESTORAN MAJU JAYA</div>
+      <div class="rc-head" data-i="stallName"></div>
       <div class="rc-row"><span id="rcBill"></span><span id="rcTime">3:00 AM</span></div>
       <div class="rc-sep"></div>
       <div id="rcLines"></div>
@@ -347,7 +347,7 @@ h1,h1 span,h2,.banner b,.till b,.tray b,.efan span,.stat b,.wallet b,.buy,.go,.t
   <div class="card">
     <div class="eyebrow" data-i="overEye"></div>
     <div class="rc-wrap"><div class="receipt">
-      <div class="rc-head">RESTORAN MAJU JAYA</div>
+      <div class="rc-head" data-i="stallName"></div>
       <div class="rc-sub" data-i="rcFinal"></div>
       <div class="rc-sep"></div>
       <div class="rc-row"><span data-i="nights"></span><span id="sNights">0</span></div>
@@ -359,175 +359,35 @@ h1,h1 span,h2,.banner b,.till b,.tray b,.efan span,.stat b,.wallet b,.buy,.go,.t
     </div></div>
     <button class="go" id="again" data-i="again"></button>
     <button class="go alt" id="copyRes" data-i="copyBtn"></button>
-    <textarea id="shareTxt" readonly rows="4" hidden aria-label="Result to copy"></textarea>
+    <textarea id="shareTxt" readonly rows="4" hidden data-ia="ariaShare"></textarea>
     <div class="best" id="best2"></div>
   </div>
 </div>
 
 <script>
-(()=>{
+(async()=>{
 const $=id=>document.getElementById(id);
 const cv=$('cv'),ctx=cv.getContext('2d');
 const bg=document.createElement('canvas'),bx=bg.getContext('2d');
 let NIGHT=30;const TS=90/30,MAXW=5,TH=1.1,PRICE=2,ROTI=3,WAGE=30;
 const SHOP=[
-  {id:'efan',name:'Kipas elektrik',desc:'Stronger gusts, no arm strain. Recharges when flat.',prices:[30],from:1},
-  {id:'staff',name:'Hire a helper',desc:'Fans the haziest table. RM50 a night, quits if unpaid.',prices:[30,30],from:2},
-  {id:'mask',name:'Pelitup muka',desc:'Box of 5. Drag onto a customer for 12s of protection.',prices:[10],repeat:true,qty:5,from:3},
-  {id:'purif',name:'Air purifier',desc:'Cleans the air at one table. Each one costs more.',prices:[60],from:4},
-  {id:'roti',name:'Roti canai',desc:'RM3 on the menu. Takes longer to eat.',prices:[30],from:5},
-  {id:'filter',name:'Penapis',desc:'Purifier filters wear out every 2 nights.',prices:[15],from:7},
+  {id:'efan',prices:[30],from:1},
+  {id:'staff',prices:[30,30],from:2},
+  {id:'mask',prices:[10],repeat:true,qty:5,from:3},
+  {id:'purif',prices:[60],from:4},
+  {id:'roti',prices:[30],from:5},
+  {id:'filter',prices:[15],from:7},
   {id:'sign',prices:[25],from:99},
   {id:'cat',prices:[80],from:9},
-  {id:'tv',name:'Football TV',desc:'Customers lose patience slower.',prices:[200],from:6},
+  {id:'tv',prices:[200],from:6},
 ];
 const STAFF_NAMES=['Raju','Ah Seng'],SIGNCD=8;
 let lang='en';try{lang=localStorage.getItem('ttj-lang')||'en'}catch(e){}
-const L={
- en:{lead:"Can you keep your customers drinking teh tarik while fighting off haze?",
-  h1:"<b>Swipe</b> to fan.",
-  h2:"Your <b>arm gets tired</b>. Give it a break.",
-  h3:"<b>Fires</b> in Sumatra mean thicker haze.",
-  h4:"<b>5 walkouts</b> and you shut down.",
-  open:"Open up",
-  orders:"Orders",
-  takings:"Earned",
-  walkouts:"Walkouts",
-  wages:"Wages",
-  tin:"Cash tin",
-  smEye:"Eh, careful",
-  smT:"Smoker at the table",
-  smP:"Extra smoke. Fan it, or mask him after.",
-  ok:"OK",
-  overEye:"Closed",
-  nights:"Nights",
-  total:"Total earned",
-  peak:"Worst API",
-  again:"Try again",
-  night:"NIGHT",
-  nightB:"Night",
-  arm:"ARM",
-  efan:"E-FAN",
-  fresh:"OK",
-  sore:"ACHING",
-  tired:"TIRED",
-  battery:"BATTERY",
-  battS:"BATT",
-  on:"ON",
-  chg:"CHG",
-  drag:"DRAG",
-  signHintT:"Drag the sign over",
-  signHintS:"Drop it on the smoker",
-  swipe:"Start fanning",
-  worse:"Haze is worse tonight",
-  fire:"Another fire!",
-  spots:"hotspots",
-  wind:"Wind changed",
-  easing:"Haze clearing a bit",
-  t0:"Well done!",
-  t1:"Packed night, boss",
-  t2:"Not bad, boss",
-  t3:"Phew, made it",
-  lost:"The haze won :(",copyBtn:"Copy result",copied:"Copied!",share:(n,o,rm,a)=>`Mamak vs Haze\nI kept my mamak open for ${n} night${n===1?'':'s'}, served ${o} orders and earned RM${rm}. Worst API: ${a}.\nCan you last longer? https://irisyann.github.io/mamak-vs-haze/`,apiK:"API",rcBill:"BILL",rcTotal:"TOTAL",rcThanks:"Thank you, come again!",rcFinal:"FINAL BILL",shopH:"Stall upgrades",rcWage:"HELPER WAGES",o0:"Lorong legend",
-  o1:"The haze won this time",
-  o2:"The regulars will be back",
-  o3:"Too hazy tonight",
-  max:"Max",
-  owned:"Got it",
-  nu:"NEW",
-  table:"Table",
-  noPur:"Buy a purifier first",
-  fl:"Fresh",
-  left1:"1 night left",
-  dirty:"Dirty",
-  full:"Full",
-  quitF:"I'm out!",
-  smokerQuit:"Ugh!",
-  dead:"Battery flat!",
-  masked:"Masked!",
-  out:"Put it out!",
-  done:n=>`Night ${n} done`,
-  openN:n=>`Open night ${n}`,
-  have:n=>` You have ${n}.`,
-  nextP:p=>`Next one RM${p}`,
-  quit:n=>n>1?`${n} helpers quit. You couldn't pay them.`:`Your helper quit. You couldn't pay him.`,
-  best:n=>n>1?`Best so far: ${n} nights`:`Best so far: ${n} night`,
-  cough:["cough!","cough cough","*cough*"],
-  bands:["Good","Moderate","Unhealthy","Very unhealthy","Hazardous"],
-  items:{efan:["Electric fan","Way stronger than your hand. Needs recharging."],staff:["Hire a helper","Fans the haziest table. RM30 wages per night."],mask:["Face masks","5 in a box. Drag one onto customer."],purif:["Air purifier","Cleans the air at one table."],roti:["Roti canai","Sells for RM3. Takes a while to finish."],filter:["Purifier filter","Filters get dirty after 2 nights. Swap them here."],sign:["No smoking sign","Drag it onto a smoker to make him stop."],tv:["Football TV","People stay calmer when there's a match on."],cat:["Oyen","Cat visits, patience goes up."]}},
- ms:{lead:"Jerebu datang lagi. Jaga meja, nanti pelanggan lari.",
-  h1:"<b>Leret</b> untuk kipas.",
-  h2:"<b>Tangan cepat penat</b>. Rehat jap.",
-  h3:"<b>Kebakaran</b> di Sumatera, jerebu makin tebal.",
-  h4:"<b>5 orang lari</b>, kedai tutup.",
-  open:"Buka kedai",
-  orders:"Pesanan",
-  takings:"Untung",
-  walkouts:"Lari",
-  wages:"Gaji",
-  tin:"Tin duit",
-  smEye:"Eh, hati-hati",
-  smT:"Ada orang hisap rokok",
-  smP:"Kipas asap dia. Bagi pelitup bila dia berhenti.",
-  ok:"OK",
-  overEye:"Tutup",
-  nights:"Malam",
-  total:"Jumlah untung",
-  peak:"API paling teruk",
-  again:"Main lagi",
-  night:"MALAM",
-  nightB:"Malam",
-  arm:"TANGAN",
-  efan:"E-FAN",
-  fresh:"OK",
-  sore:"LENGUH",
-  tired:"PENAT",
-  battery:"BATERI",
-  battS:"BAT",
-  on:"ON",
-  chg:"CAS",
-  drag:"SERET",
-  signHintT:"Seret papan tanda",
-  signHintS:"Letak kat perokok",
-  swipe:"Mula kipas",
-  worse:"Jerebu makin teruk malam ni",
-  fire:"Ada kebakaran lagi!",
-  spots:"titik panas",
-  wind:"Angin dah tukar",
-  easing:"Jerebu kurang sikit",
-  t0:"Bagus!",
-  t1:"Ramai gila malam ni, boss",
-  t2:"Boleh tahan, boss",
-  t3:"Fuh, lepas jugak",
-  lost:"Jerebu menang :(",copyBtn:"Salin keputusan",copied:"Dah disalin!",share:(n,o,rm,a)=>`Mamak vs Haze\nKedai aku bertahan ${n} malam, ${o} pesanan, untung RM${rm}. IPU paling teruk: ${a}.\nBoleh lawan? https://irisyann.github.io/mamak-vs-haze/`,apiK:"IPU",rcBill:"BIL",rcTotal:"JUMLAH",rcThanks:"Terima kasih, sila datang lagi!",rcFinal:"BIL AKHIR",shopH:"Barang kedai",rcWage:"GAJI PEMBANTU",o0:"Legenda lorong",
-  o1:"Kali ni jerebu menang",
-  o2:"Pelanggan tetap akan datang balik",
-  o3:"Jerebu teruk sangat",
-  max:"Maks",
-  owned:"Dah ada",
-  nu:"BARU",
-  table:"Meja",
-  noPur:"Beli penulen dulu",
-  fl:"Baru",
-  left1:"Tinggal 1 malam",
-  dirty:"Kotor",
-  full:"Penuh",
-  quitF:"Tak tahan!",
-  smokerQuit:"Cis!",
-  dead:"Bateri habis!",
-  masked:"Pakai pelitup!",
-  out:"Padam rokok!",
-  done:n=>`Malam ${n} habis`,
-  openN:n=>`Buka malam ${n}`,
-  have:n=>` Ada ${n}.`,
-  nextP:p=>`Seterusnya RM${p}`,
-  quit:n=>n>1?`${n} pembantu berhenti. Gaji tak cukup.`:`Pembantu berhenti. Gaji tak cukup.`,
-  best:n=>n>1?`Rekod paling lama: ${n} malam`:`Rekod paling lama: ${n} malam`,
-  cough:["uhuk!","uhuk uhuk","*batuk*"],
-  bands:["Baik","Sederhana","Tidak sihat","Sangat tidak sihat","Berbahaya"],
-  items:{efan:["Kipas elektrik","Lagi kuat dari tangan. Cas sendiri bila habis."],staff:["Ambil pembantu","Kipas meja paling berjerebu. Gaji RM30 semalam."],mask:["Pelitup muka","5 sekotak. Seret ke pelanggan."],purif:["Penulen udara","Bersihkan udara kat satu meja."],roti:["Roti canai","Jual RM3. Lama sikit nak habis."],filter:["Penapis","Penapis kotor lepas 2 malam. Tukar kat sini."],sign:["Papan dilarang merokok","Seret ke perokok supaya dia berhenti."],tv:["TV bola","Pelanggan lebih sabar bila ada bola."],cat:["Oyen","Kucing datang, sabar bertambah."]}}
-};
+const LANG_FILES={en:'lang/en.json',ms:'lang/bm.json'};
+const L=Object.fromEntries(await Promise.all(Object.entries(LANG_FILES).map(async([l,f])=>[l,await (await fetch(f)).json()])));
 const T=k=>L[lang][k];
+// F: fill {placeholders}; {one,other} entries pick by v.n
+const F=(k,v)=>{let s=T(k);if(s&&typeof s==='object')s=v.n===1?s.one:s.other;return s.replace(/\{(\w+)\}/g,(_,x)=>v[x]);};
 let W,H,DPR,S,topH,roofH;
 const tables=[0,1,2,3].map(i=>({x:0,y:0,cust:null,respawn:0,dens:0}));
 let state='menu',clock=0,nightT=0,spawnAcc=0,waveT=14,parts=[],floats=[],trails=[],staff=[];
@@ -625,7 +485,7 @@ function drawBG(){
   c.strokeStyle='#f2c94c';c.lineWidth=2*S;rr(c,sx+3*S,sy+3*S,sw-6*S,sh-6*S,3*S);c.stroke();
   c.fillStyle='#f6d35b';c.textAlign='center';c.textBaseline='middle';
   c.font=`${Math.round(sh*.44)}px Anton, Impact, sans-serif`;
-  c.fillText('RESTORAN MAJU JAYA',W/2,sy+sh/2+1);
+  c.fillText(T('stallName'),W/2,sy+sh/2+1);
   const ty=sy+sh+10*S;
   for(const lx of [W*.18,W*.82]){
     g=c.createRadialGradient(lx,ty,2,lx,ty,70*S);g.addColorStop(0,'rgba(234,246,232,.5)');g.addColorStop(1,'rgba(234,246,232,0)');
@@ -635,7 +495,7 @@ function drawBG(){
   g=c.createLinearGradient(0,cy,0,topH);g.addColorStop(0,'#d7dcda');g.addColorStop(.15,'#9ea6a4');g.addColorStop(1,'#6d7573');
   c.fillStyle=g;c.fillRect(0,cy,W,ch);
   c.fillStyle='#2b3132';c.font=`700 ${Math.round(9*S)}px Figtree, sans-serif`;
-  c.fillText('TEH TARIK RM2'+(up.roti?'      ROTI CANAI RM3':''),W/2,cy+ch*.55);
+  c.fillText(F('boardTeh',{p:PRICE})+(up.roti?'      '+F('boardRoti',{p:ROTI}):''),W/2,cy+ch*.55);
   [[.12,1],[.88,-1]].forEach(([fx,dir])=>{
     const jx=W*fx,jy=cy;c.fillStyle='#c9cfcd';
     c.beginPath();c.moveTo(jx-9*S,jy);c.lineTo(jx-7*S,jy-22*S);c.lineTo(jx+7*S,jy-22*S);c.lineTo(jx+9*S,jy);c.closePath();c.fill();
@@ -1027,10 +887,11 @@ function hudFrame(){
 }
 function setEfan(on){efanOn=on;$('efan').setAttribute('aria-pressed',String(on));}
 
-function bestLine(){return best>0?T('best')(best):'';}
+function bestLine(){return best>0?F('best',{n:best}):'';}
 function applyLang(){
   document.querySelectorAll('[data-i]').forEach(el=>{el.innerHTML=T(el.dataset.i);});
-  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-ia]').forEach(el=>el.setAttribute('aria-label',T(el.dataset.ia)));
+  document.title=T('docTitle');document.documentElement.lang=lang;drawBG();
   document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.l===lang)));
   $('best1').textContent=bestLine();$('best2').textContent=bestLine();lastClk='';lastEf='';lastApi=-1;
   if(state==='shop'&&sum){shopText();renderShop();}
@@ -1039,19 +900,19 @@ function applyLang(){
 document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.l;try{localStorage.setItem('ttj-lang',lang)}catch(e){}applyLang();}));
 function overTitle(){return T('lost');}
 function shopText(){
-  const rl=[[`TEH TARIK x${sum.teh}`,'RM'+sum.teh*PRICE]];
-  if(up.roti||sum.roti)rl.push([`${T('items').roti[0].toUpperCase()} x${sum.roti}`,'RM'+sum.roti*ROTI]);
+  const rl=[[`${T('rcTeh')} x${sum.teh}`,'RM'+sum.teh*PRICE]];
+  if(up.roti||sum.roti)rl.push([`${T('items').roti.name.toUpperCase()} x${sum.roti}`,'RM'+sum.roti*ROTI]);
   if(sum.wages)rl.push([`${T('rcWage')} x${sum.staff}`,'-RM'+sum.wages,'neg']);
   $('rcLines').innerHTML=rl.map(r=>`<div class="rc-row${r[2]?' neg':''}"><span>${r[0]}</span><span>${r[1]}</span></div>`).join('');
   $('rcBill').textContent=`${T('rcBill')} #${String(sum.bill).padStart(4,'0')}  ${T('night')} ${sum.n}`;
   $('shRm').textContent=(sum.net<0?'-RM':'RM')+Math.abs(sum.net);
   $('rcWalkL').textContent=T('walkouts').toUpperCase();$('shWalk').textContent=sum.walk+'/'+MAXW;
-  $('shQuit').hidden=!sum.quit.length;if(sum.quit.length)$('shQuit').textContent=T('quit')(sum.quit.length);
-  $('shEye').textContent=T('done')(sum.n);
+  $('shQuit').hidden=!sum.quit.length;if(sum.quit.length)$('shQuit').textContent=F('quit',{n:sum.quit.length});
+  $('shEye').textContent=F('done',{n:sum.n});
   const st=$('shT');st.style.animation='none';void st.offsetWidth;st.style.animation='';st.textContent=sum.walk===0?T('t0'):sum.sold>=24?T('t1'):sum.sold>=12?T('t2'):T('t3');
-  $('next').textContent=T('openN')(night);
+  $('next').textContent=F('openN',{n:night});
 }
-function itemHead(it,extra){const [nm,ds]=T('items')[it.id];return `<div><h3>${nm}${extra||''}${night-1===it.from?`<span class="new">${T('nu')}</span>`:''}</h3><p>${ds}${it.repeat?T('have')(masks):''}</p></div>`;}
+function itemHead(it,extra){const {name:nm,desc:ds}=T('items')[it.id];return `<div><h3>${nm}${extra||''}${night-1===it.from?`<span class="new">${T('nu')}</span>`:''}</h3><p>${ds}${it.repeat?F('have',{n:masks}):''}</p></div>`;}
 
 function startNight(){
   NIGHT=night<=2?20:30;
@@ -1087,7 +948,7 @@ function purifRow(it,box){const row=document.createElement('div');row.className=
     if(purifs[i]){pb.textContent=(i+1)+' ✓';pb.setAttribute('aria-pressed','true');pb.disabled=true;}
     else{pb.textContent=String(i+1);pb.disabled=wallet<p;pb.addEventListener('click',()=>{if(wallet<p)return;wallet-=p;purifs[i]=true;filt[i]=2;SFX.buy();renderShop();hud();});}
     pl.appendChild(pb);});
-  if(n<4){const pr=document.createElement('span');pr.className='price';pr.textContent=T('nextP')(p);pl.appendChild(pr);}
+  if(n<4){const pr=document.createElement('span');pr.className='price';pr.textContent=F('nextP',{p});pl.appendChild(pr);}
   row.appendChild(pl);box.appendChild(row);}
 function filterRow(it,box){const row=document.createElement('div');row.className='item';const p=it.prices[0];
   row.innerHTML=itemHead(it);
@@ -1123,7 +984,7 @@ function renderShop(){
     box.appendChild(row);
   }
 }
-$('copyRes').addEventListener('click',()=>{const b=$('copyRes'),ta=$('shareTxt'),txt=T('share')(night-1,soldTotal,Math.round(earnedTotal),Math.round(peak));
+$('copyRes').addEventListener('click',()=>{const b=$('copyRes'),ta=$('shareTxt'),txt=F('share',{n:night-1,o:soldTotal,rm:Math.round(earnedTotal),a:Math.round(peak)});
   const done=()=>{SFX.tick();b.textContent=T('copied');clearTimeout(b._t);b._t=setTimeout(()=>{b.textContent=T('copyBtn');},2000);};
   const fallback=()=>{ta.value=txt;ta.hidden=false;ta.focus();ta.select();try{if(document.execCommand('copy'))done();}catch(e){}};
   try{navigator.clipboard.writeText(txt).then(done,fallback);}catch(e){fallback();}});
