@@ -1,0 +1,11 @@
+[
+  { "id": "efan",   "prices": [30],              "from": 1 },
+  { "id": "staff",  "prices": [30, 30],          "from": 2 },
+  { "id": "mask",   "prices": [10],              "from": 3, "repeat": true, "qty": 5 },
+  { "id": "purif",  "prices": [60, 90, 130, 180], "from": 4 },
+  { "id": "roti",   "prices": [30],              "from": 5 },
+  { "id": "filter", "prices": [15],              "from": 7 },
+  { "id": "sign",   "prices": [25],              "from": 99 },
+  { "id": "cat",    "prices": [80],              "from": 9 },
+  { "id": "tv",     "prices": [200],             "from": 6 }
+]
