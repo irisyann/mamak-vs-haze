@@ -243,6 +243,7 @@
       .arm .lbl {
         display: flex;
         justify-content: space-between;
+        gap: 6px;
         font-size: 10px;
         letter-spacing: 0.12em;
         font-weight: 800;
@@ -342,6 +343,39 @@
       }
       .tray:disabled {
         opacity: 0.4;
+      }
+      .tools {
+        display: flex;
+        align-items: flex-end;
+        gap: 8px;
+        flex: none;
+      }
+      @media (max-width: 600px) {
+        .tools {
+          display: grid;
+          grid-template-rows: repeat(2, auto);
+          grid-auto-flow: column;
+          gap: 6px;
+        }
+        .tray {
+          flex-direction: row;
+          height: 30px;
+          min-width: 0;
+          padding: 0 8px;
+          gap: 5px;
+          justify-content: flex-start;
+        }
+        .tray svg {
+          width: 22px;
+          height: 15px;
+        }
+        .tray b {
+          font-size: 11px;
+        }
+        .efan {
+          width: 58px;
+          height: 58px;
+        }
       }
       .arm.tired .lbl em {
         color: var(--stool);
@@ -466,6 +500,8 @@
         display: flex;
         flex-direction: column;
         gap: 14px;
+        max-height: 100%;
+        overflow-y: auto;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
       }
       .eyebrow {
@@ -1366,29 +1402,30 @@
         gap: 12px;
         padding-block: 16px;
       }
+      #shopOv {
+        overflow: hidden;
+      }
+      #shopOv .card {
+        min-height: 0;
+      }
+      #shopOv .card > * {
+        flex: none;
+      }
+      #shopOv .card > .menu {
+        flex: 1 1 auto;
+      }
+      #shopOv .menu {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        min-height: 120px;
+      }
+      #shopOv .shop {
+        flex: 1 1 auto;
+        min-height: 0;
+      }
       @media (max-width: 600px) {
-        #shopOv {
-          overflow: hidden;
-        }
-        #shopOv .card {
-          max-height: 100%;
-          min-height: 0;
-        }
-        #shopOv .card > * {
-          flex: none;
-        }
-        #shopOv .card > .menu {
-          flex: 1 1 auto;
-        }
-        #shopOv .menu {
-          display: flex;
-          flex-direction: column;
-          flex: 1 1 auto;
-          min-height: 120px;
-        }
         #shopOv .shop {
-          flex: 1 1 auto;
-          min-height: 0;
           max-height: none;
         }
       }
@@ -1493,6 +1530,7 @@
         <div class="lbl"><span id="armN"></span><em id="armS"></em></div>
         <div class="bar"><i id="armBar"></i></div>
       </div>
+      <div class="tools">
       <button class="tray chip" id="tray" hidden data-ia="ariaMasks">
         <svg viewBox="0 0 32 20" aria-hidden="true">
           <path
@@ -1523,6 +1561,7 @@
           <circle cx="12" cy="12" r="1.6" fill="#3a4a52" /></svg
         ><b id="blowN"></b>
       </button>
+      </div>
       <div class="efan" id="efan" hidden role="status" aria-pressed="false" data-ia="ariaEfan">
         <i class="bolt"></i><span id="efanT"></span>
       </div>
